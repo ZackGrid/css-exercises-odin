@@ -1,10 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+
+  /* my solution*/
+  box-sizing: border-box;
 }
 
 .container {
   text-align: center;
+  
+  /* my solution*/
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(2, min-content) 1fr min-content;
+  gap: 5px;
 }
 
 .container div {
@@ -13,19 +22,48 @@
   font-family: Helvetica;
   font-weight: bold;
   color: white;
+
+  /* my solution*/
+  display: grid;
 }
 
 .header {
   background-color: #393f4d;
+
+  /* my solution*/
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+}
+
+/* my solution*/
+.menu ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+/* my solution*/
+.logo {
+  justify-self: start;
+}
+ul {
+  list-style: none;
 }
 
 .menu ul,
 .menu li {
   font-size: 16px;
+
+  /* my solution*/
+  align-self: center;
 }
 
 .sidebar {
   background-color: #FF7755;
+
+  /* my solution*/
+  grid-row: 2 / 4;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 50px;
 }
 
 .sidebar .photo {
@@ -34,6 +72,9 @@
   font-size: 12px;
   font-weight: normal;
   border-radius: 10px;
+
+  /* my solution*/
+  display: grid;
 }
 
 
@@ -42,10 +83,27 @@
   color: black;
   font-size: 16px;
   font-weight: normal;
+  /* my solution*/
+  display: grid;
+}
+
+/* my solution*/
+.side-content,
+.photo {
+  align-items: center;
 }
 
 .nav {
   background-color: #FF7755;
+
+  /* my solution*/
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+/* my solution*/
+.nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .nav ul li {
@@ -55,6 +113,12 @@
 
 .article {
   background-color: #bccbde;
+
+  /* my solution*/
+  grid-area: 3 / 2 / 4 / 3;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+
 }
 
 .article p {
@@ -68,6 +132,11 @@
   background-color: #FFFFFF;
   color: black;
   text-align: center;
+  
+  /* my solution*/
+  grid-template-rows: min-content max-content;
+  gap: 10px;
+  height: 200px;
 }
 
 .card p {
@@ -83,6 +152,9 @@
 
 .footer {
   background-color: #393f4d;
+
+  /* my solution*/
+  grid-area: 4 / 1 / 5 / 3;
 }
 
 .footer p {
